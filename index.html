@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學生資料查詢 - 成績查詢</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="breadcrumb">
+    <i class="fa-solid fa-house"></i>
+    <span>/</span><span>學生資料作業</span>
+    <span>/</span><span>學生資料查詢</span>
+    <span>/</span><span>學生基本資料</span>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>學生資料作業</h2>
+
+      <div class="side-title">
+        <i class="fa-solid fa-bookmark"></i> 學生資料查詢
+      </div>
+
+      <nav>
+        <a class="active">學生資料查詢</a>
+        <a>補考科目查詢</a>
+        <a>各學期不及格科目查詢</a>
+        <a>應補修清單-異動生</a>
+      </nav>
+
+      <div class="side-title">
+        <i class="fa-solid fa-bookmark"></i> 其他
+      </div>
+      <nav>
+        <a>檔案下載</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="page-title">
+        <button class="collapse-btn">«</button>
+        <h1>成績查詢</h1>
+      </div>
+
+      <section class="content-card">
+        <div class="student-banner">
+          <div class="avatar">李</div>
+          <div class="student-pill">
+            <span>205</span>
+            <span>座號：09</span>
+            <span class="student-id">410009 李咨儀</span>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <button>學生基本資料</button>
+          <button>缺曠統計</button>
+          <button>德育獎懲</button>
+          <button>異動紀錄</button>
+          <button class="selected">成績查詢</button>
+          <button>輔導資料</button>
+        </div>
+
+        <div class="grade-tabs">
+          <button>歷年成績</button>
+          <button class="selected">單次考試所有成績</button>
+          <button>各次考試所有成績</button>
+          <button>各次考試單科成績</button>
+        </div>
+
+        <div class="notice">
+          單次考試所有成績查詢開放時間：2022/02/01 ~ 2030/08/31
+        </div>
+
+        <div class="search-area">
+          <div class="field">
+            <label>學年度學期</label>
+            <select id="semester">
+              <option>115學年度 上學期</option>
+              <option>114學年度 下學期</option>
+              <option>114學年度 上學期</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>考試名稱</label>
+            <select id="exam">
+              <option>期中考1</option>
+              <option>期末考</option>
+              <option>第一次段考</option>
+              <option>第二次段考</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button class="search-btn" id="searchBtn">
+              <i class="fa-solid fa-magnifying-glass"></i> 查詢
+            </button>
+            <button class="clear-btn" id="clearBtn">
+              <i class="fa-solid fa-xmark"></i> 清除
+            </button>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-head">
+            <div class="student-name">
+              <i class="fa-solid fa-user"></i> 410009 李咨儀
+            </div>
+            <div class="time">
+              <i class="fa-regular fa-clock"></i>
+              資料取得時間：<span id="dataTime">2026/10/08 17:09</span>
+            </div>
+          </div>
+
+          <div class="statistics">
+            <div><i class="fa-solid fa-book-open"></i> 總分：<span id="total">114.00</span></div>
+            <div>平均：<span id="average">57.00</span></div>
+            <div class="rank">班級排名：<b>/ 0</b></div>
+            <div class="rank">類組排名：<b>/ 0</b></div>
+            <div class="rank">分組排名：<b>/ 0</b></div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>科目</th>
+                <th>成績</th>
+                <th>班級平均</th>
+              </tr>
+            </thead>
+            <tbody id="gradeBody">
+              <tr>
+                <td>259 選修物理-力學一</td>
+                <td>68.00</td>
+                <td>70.29</td>
+              </tr>
+              <tr>
+                <td>261 選修化學-物質與能量</td>
+                <td>46.00</td>
+                <td>62.61</td>
+              </tr>
+              <tr>
+                <td>301 必修英語文</td>
+                <td>82.00</td>
+                <td>72.97</td>
+              </tr>
+              <tr>
+                <td>009 選修生物</td>
+                <td>78.00</td>
+                <td>64.91</td>
+              </tr>
+              <tr>
+                <td>003 數學A</td>
+                <td>70.00</td>
+                <td>64.12</td>
+              </tr>
+              <tr>
+                <td>300 國語文</td>
+                <td>79.00</td>
+                <td>72.98</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bottom-note">
+          <span><i class="fa-solid fa-circle-exclamation"></i> 欲查詢【實得累計學分】統計來源，學籍表需選印「修課學期」。</span>
+          <span><i class="fa-solid fa-circle-exclamation"></i> 以上資訊非即時查詢，請以學校記錄為準。</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
